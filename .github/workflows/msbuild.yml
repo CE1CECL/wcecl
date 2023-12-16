@@ -18,7 +18,7 @@ jobs:
 
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: msbuild . /p:Platform=x86 && msbuild . /p:Platform=ARM
+      run: msbuild . /p:Platform=x86 /p:OutputPath=x86 && msbuild . /p:Platform=ARM /p:OutputPath=ARM
 
     - name: Upload
       uses: actions/upload-artifact@v3
